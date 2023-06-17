@@ -104,7 +104,6 @@
 ---
 
 ## 6.  Crie um método que receba o custo e o pagamento.
-    <details>
   Ele deve imprimir no console as seguintes informações:
     - Valor do troco
     - Troco em menor quantidade de notas e moedas possiveis
@@ -121,6 +120,5 @@
             1 - moeda de 50
             1 - moeda de 10
             1 - moeda de 5
-  </details>
 
 ---
