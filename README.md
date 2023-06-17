@@ -2,7 +2,7 @@
 
 
 
-  <summary><strong>👨‍💻 O que deverá ser desenvolvido</strong></summary><br />
+  <summary><strong>👨‍💻 O que foi desenvolvido</strong></summary><br />
 
   - Nesse projeto está desenvolvido seis exercícios introdutórios para a linguagem Java.
 
