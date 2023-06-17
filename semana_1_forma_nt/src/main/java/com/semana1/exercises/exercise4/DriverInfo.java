@@ -1,10 +1,5 @@
 package com.semana1.exercises.exercise4;
 
-// Uma pessoa possui nome, cpf rg e identidade
-// Um funcionário possui nome, cpf, rg, identidade, idade, cargo e salário
-// Um motorista possui nome, cpf, rg, identidade, idade, cargo, salário, cnh e placa do carro
-// Monte a estrutura de classes, instancie dois motoristas e imprima no console o nome, cargo e placa do carro de cada um deles
-
 public class DriverInfo {
     private String name;
     private String cpf;
