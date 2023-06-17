@@ -88,7 +88,6 @@
 
     - Um funcionário, além de possuir as mesmas informações de uma pessoa, possui também { cargo, salário };
   </detail>
-    - Ao carregar a página, o filtro selecionado deverá ser `All`.
   
    Instancie 2 Motoristas e imprima no console { nome, cargo e placaCarro } de cada motorista
 
