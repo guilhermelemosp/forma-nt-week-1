@@ -1,7 +1,7 @@
 # Boas-vindas ao repositório de exercícios do FormaNT - Semana 01!
 
 
-<details>
+
   <summary><strong>👨‍💻 O que deverá ser desenvolvido</strong></summary><br />
 
   - Nesse projeto está desenvolvido seis exercícios introdutórios para a linguagem Java.
