@@ -1,44 +1,53 @@
 package com.semana1.exercises.exercise6;
+import com.semana1.exercises.exercise6.utils.CashData;
+import com.semana1.exercises.exercise6.utils.Organize;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 public class MoneyChange {
     public void printChange(double cost, double payment) {
-        double change = payment - cost;
-        System.out.println("Custo: " + cost);
-        System.out.println("--------------------");
-        System.out.println("Troco: " + change);
-        System.out.println("--------------------");
-        System.out.println("Menor Troco: ");
-        
-        int[] notes = { 100, 50, 20, 10, 5, 2, 1 };
-        double[] coins = { 1.00, 0.50, 0.25, 0.10, 0.05 };
-        boolean firstItem = true;
+        CashData cashData = new CashData();
+        Organize organize = new Organize();
 
-        for (int i = 0; i < notes.length; i++) {
-            int note = notes[i];
-            while (change >= note) {
+        BigDecimal costBD = BigDecimal.valueOf(cost);
+        BigDecimal paymentBD = BigDecimal.valueOf(payment);
+        BigDecimal changeBD = paymentBD.subtract(costBD).setScale(2, RoundingMode.HALF_UP);
+
+        organize.printTop();
+        System.out.println("Custo: " + costBD);
+        organize.printTop();
+        System.out.println();        
+        System.out.println("Troco: " + changeBD);
+        organize.printTop();
+        System.out.println("Menor Troco: ");
+
+        for (int i = 0; i < cashData.cashes.length; i++) {
+            BigDecimal cash = BigDecimal.valueOf(cashData.cashes[i]);
+            while (changeBD.compareTo(cash) >= 0) {
                 //se nao for o primeiro item
-                if (!firstItem) {
+                if (!cashData.firstItem) {
                     System.out.print(", ");
                 }
-                System.out.print(note);
-                change -= note;
+                System.out.print("Uma nota de R$" + cash);
+                changeBD = changeBD.subtract(cash);
                 // altera o FirstItem para false
-                firstItem = false;
+                cashData.firstItem = false;
             }
         }
-        
-        for (int i = 0; i < coins.length; i++) {
-            double coin = coins[i];
-            while (change >= coin) {
-                if (!firstItem) {
+
+        for (int i = 0; i < cashData.coins.length; i++) {
+            BigDecimal coin = cashData.coins[i];
+            while (changeBD.compareTo(coin) >= 0) {
+                if (!cashData.firstItem) {
                     System.out.print(", ");
                 }
-                System.out.print(coin);
-                change -= coin;
-                
-                firstItem = false;
+                System.out.print("Uma moeda de R$" + coin );
+                changeBD = changeBD.subtract(coin);
+
+                cashData.firstItem = false;
             }
         }
         System.out.println(".");
-}
+        organize.printBottom();
+    }
 }
